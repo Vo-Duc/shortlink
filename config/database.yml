@@ -17,6 +17,4 @@ test:
 
 production:
   <<: *default
-  database: shortlink_production
-  username: shortlink
-  password: <%= ENV["SHORTLINK_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
