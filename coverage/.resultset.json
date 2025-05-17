@@ -1,0 +1,136 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/duc/workspace/shortlink/app/models/shortened_url.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+          "[:unless, 0, 12, 6, 12, 61]": {
+            "[:else, 1, 12, 6, 12, 61]": 1,
+            "[:then, 2, 12, 6, 12, 11]": 4
+          }
+        }
+      },
+      "/home/duc/workspace/shortlink/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/controllers/api/v1/short_links_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/duc/workspace/shortlink/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1747448780
+  }
+}

@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  port: <%= ENV['DB_PORT'] || '5432' %>
+  username: <%= ENV['DB_USERNAME'] || 'postgres' %>
+  password: <%= ENV['DB_PASSWORD'] || 'postgres' %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: shortlink_development
+
+test:
+  <<: *default
+  database: shortlink_test
+
+production:
+  <<: *default
+  database: shortlink_production
+  username: shortlink
+  password: <%= ENV["SHORTLINK_DATABASE_PASSWORD"] %>
