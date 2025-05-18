@@ -2,9 +2,15 @@ class Api::V1::ShortLinksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def encode
-    url = ShortenedUrl.find_or_create_by(original_url: params[:original_url])
+    if params[:original_url].blank?
+      render json: { error: "original_url is required" }, status: :bad_request
+      return
+    end
 
-    render json: { short_url: url.short_url }, status: :ok
+    url = ShortenedUrl.find_or_create_by(original_url: params[:original_url])
+    base = ENV['BASE_URL'] || request.base_url
+    full = "#{base}/#{url.short_url}"
+    render json: { short_url: full }, status: :ok
   end
 
   def decode
