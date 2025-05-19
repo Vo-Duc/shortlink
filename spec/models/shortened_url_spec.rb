@@ -5,10 +5,13 @@ RSpec.describe ShortenedUrl, type: :model do
     it 'validates format of original_url' do
       valid_url = ShortenedUrl.new(original_url: 'https://example.com')
       invalid_url = ShortenedUrl.new(original_url: 'not_a_url')
+      other_invalid_url = ShortenedUrl.new(original_url: 'htp://example.com')
 
       expect(valid_url).to be_valid
       expect(invalid_url).not_to be_valid
       expect(invalid_url.errors[:original_url]).not_to be_empty
+      expect(other_invalid_url).not_to be_valid
+      expect(other_invalid_url.errors[:original_url]).to include('must be a valid URL')
     end
 
     it 'validates uniqueness of short_url' do

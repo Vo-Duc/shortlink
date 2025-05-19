@@ -7,7 +7,16 @@ class Api::V1::ShortLinksController < ApplicationController
       return
     end
 
-    url = ShortenedUrl.find_or_create_by(original_url: params[:original_url])
+    url = ShortenedUrl.find_by(original_url: params[:original_url])
+
+    unless url
+      url = ShortenedUrl.new(original_url: params[:original_url])
+      unless url.save
+        render json: { error: url.errors.full_messages }, status: :unprocessable_entity
+        return
+      end
+    end
+
     base = ENV['BASE_URL'] || request.base_url
     full = "#{base}/#{url.short_url}"
     render json: { short_url: full }, status: :ok

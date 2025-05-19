@@ -1,5 +1,9 @@
 class ShortenedUrl < ApplicationRecord
+  VALID_URL_REGEX = /\Ahttps?:\/\/(www\.)?[\w\-]+(\.[\w\-]+)+([\/?].*)?\z/i
+
   validates :original_url, presence: true, format: URI::DEFAULT_PARSER.make_regexp
+  validates :original_url, format: { with: VALID_URL_REGEX, message: "must be a valid URL" }
+
   validates :short_url, uniqueness: true
 
   before_create :generate_short_url
